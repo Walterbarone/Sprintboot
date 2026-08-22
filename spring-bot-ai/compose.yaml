@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: spring-bot-ai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: spring_bot_ai
+      POSTGRES_USER: springbot
+      POSTGRES_PASSWORD: springbot123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
